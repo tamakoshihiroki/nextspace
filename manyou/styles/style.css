@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "HGPｺﾞｼｯｸE", sans-serif;
+/*  font-weight: bold;*/
+}
+
+body {
+  text-align: center; /* for IE bug */
+}
+
+div#page {
+  position: relative;
+  width: 760px;
+  margin: auto;
+  text-align: left; /* for IE bug */
+}
+
+div#header {
+  background-image: url( ../images/header_background.jpg );
+  background-repeat: no-repeat;
+  width: 760px;
+  height: 140px;
+  position: relative;
+}
+
+a#logo {
+  display: block;
+  float: left;
+  width: 152px;
+  height: 110px;
+  background-color: black;
+  color: white;
+  font-size: 280%;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.60;
+  filter:alpha( opacity = 60 );
+
+  line-height: 1.2em;
+}
+
+a:hover#logo {
+  opacity: 0.80;
+  filter:alpha( opacity = 80 );
+}
+
+div#menu {
+  padding-top: 55px;
+  font-size: 140%;
+}
+
+div#menu li {
+  list-style-type: none;
+  display: inline;
+}
+
+div#menu a {
+  display: block;
+  float: left;
+  margin-left: 1px;
+  width: 151px;
+  height: 55px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.60;
+  filter:alpha( opacity = 60 );
+
+  line-height: 1.2em;
+}
+
+div#menu a.calibrate {
+  line-height: 55px;
+}
+
+div#menu a.calibrate-selected {
+  line-height: 55px;
+  opacity: 0.80;
+  filter:alpha( opacity = 80 );
+}
+
+div#menu a.selected {
+  opacity: 0.80;
+  filter:alpha( opacity = 80 );
+}
+
+div#menu a:hover {
+  opacity: 0.80;
+  filter:alpha( opacity = 80 );
+}
+
+div#submenu {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 90%;
+}
+
+div#submenu li {
+  list-style-type: none;
+  display: inline;
+}
+
+div#submenu li a {
+  display: block;
+  float: left;
+  margin-left: 1px;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  text-align: center;
+  width: 151px;
+  opacity: 0.60;
+  filter:alpha( opacity = 60 );
+  line-height: 25px;
+}
+
+div#submenu a:hover {
+  opacity: 0.80;
+  filter:alpha( opacity = 80 );
+}
+
+div#top_image {
+  background-image: url( ../images/top_background.jpg );
+  background-repeat: no-repeat;
+  width: 760px;
+  height: 230px;
+}
+
+div#footer {
+  position: relative;
+  font-size: 90%;
+  height: 3em;
+  background-color: #d2f79c;
+  margin-top: 70px;
+  padding: 4px 4px 0px 4px;
+}
+
+div#footer p {
+  float: left;
+}
+
+div#footer_link {
+  position: absolute;
+  top: 0x;
+  right: 0px;
+}
+
+div#footer li {
+  display: inline;
+  margin-right: 10px;
+}
+
+div#footer li a {
+  text-decoration: none;
+  color: black;
+}
+
+div#content {
+  margin-top: 10px;
+  clear: both;
+  font-size: 130%;
+  position: relative;
+}
+
+div#content h1 {
+  font-size: 130%;
+  margin-bottom: 10px;
+  border-width: 0px 0px 0px 10px;
+  border-color: #aecc81;
+  border-style: solid;
+  padding-left: 10px;
+}
+
+div#content h2 {
+  font-size: 110%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-width: 0px 0px 0px 10px;
+  border-color: #aecc81;
+  border-style: solid;
+  padding-left: 10px;
+}
+
+div.register {
+  padding: 30px 0px 30px 0px;
+  text-align: center;
+}
+
+td {
+  border-top-style: dotted;
+  border-width: 1px;
+  border-collapse: collapse;
+  padding: 5px 20px 5px 10px;
+  background-color: #ffffff;
+}
+
+td.label {
+  background-color: #d2f79c;
+  white-space: nowrap;
+}
+
+.space30 {
+  width: 30px;
+}
+
+p {
+  margin: 0px 0px 4px 0px;
+  line-height: 120%;
+}
+
+p.vspace30 {
+  margin: 30px 0px 30px 0px;
+}
+
+p.vspace10 {
+  margin: 10px 0px 10px 0px;
+}
+
+div.message {
+  text-align: center;
+  color: #df600d;
+  margin: 10px 0px 10px 0px;
+}
+
+div.normal-message {
+  text-align: center;
+  font-size: 120%;
+  margin: 10px 0px 20px 0px;
+}
+
+ul li {
+  list-style-position: inside;
+}
+
+div#registered {
+  text-align: right;
+  font-size: 80%;
+}
+
+input {
+  font-size: 120%;
+}
+
+select {
+  font-size: 110%;
+}
+
+input.button {
+  font-size: 120%;
+}
+
+textarea {
+  font-size: 110%;
+}
+
+table.new_user {
+  vertical-align: middle;
+  border: none;
+  width: 100%;
+}
+
+table.new_user td {
+  padding: 5px;
+  border: none;
+  text-align: center;
+}
+
+a img {
+  text-decoration: none;
+  border: none;
+}
+
+table.search {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+table.search td {
+  border: none;
+}
+
+table.searched {
+  margin-bottom: 20px;
+}
+
+/*table.searched td {
+  font-size: 120%;
+}*/
+
+table.searched td.label {
+  background-color: #d2f79c;
+  width: 60px;
+}
+
+.tdbottom {
+  border-bottom-style: dotted;
+  border-width: 1px;
+}

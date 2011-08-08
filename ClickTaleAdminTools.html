@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Enabling/Disabling ClickTale Monitoring for Web Owners</title>
+</head>
+<body>
+	<h1>Enabling/Disabling ClickTale for this user/domain.</h1>
+	<h2>This is part of ClickTale's utilities for web owners.</h2>
+	<p>ClickTale uses cookies to differentiate visitors and maintain their states.</p>
+	<p>
+	<button onclick="WRcreateCookie('WRUID',WRGetRandToken()+'.'+WRGetRandToken(),3650);">Force recording</button>
+	<b>Force</b> yourself to be recorded on the current domain.</p>
+	
+	<p>
+	<button onclick="WRcreateCookie('WRUID','0',3650);">Disable for 10 years</button>
+	<b>Block</b> yourself from being recorded on the current domain.</p>
+	
+	<p>
+	<button onclick="WRcreateCookie('WRUID','',-1);">Reset</button>
+	<b>Reset</b> the state so that ClickTale will be forced to re-classify the user on his next recorded session.</p>
+	
+	
+	<p>You might need to do this separately for each browser and domain that you wish to use.</p>
+	<p>For more information, visit our <a href="http://www.clicktale.net/subs/phpbb2/">beta forum</a>.</p>
+	
+<script type="text/javascript">
+// cookie stuff
+function WRcreateCookie(name,value,days)
+{
+	// figure our the domain
+	var d=document.domain;
+	if(d.search(/www\.\w+\.\w+/i)==0)
+		d=d.substring(4, d.length);
+	else
+		d=false;
+
+	// write the cookie
+	if (days)
+	{
+		var date = new Date();
+		date.setTime(date.getTime()+(days*86400000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/;"+(d?" domain="+d+";":"");
+}
+
+function WRGetRandToken()
+{
+	return Math.floor(Math.random()*2147483647); // stay bellow max signed long
+}
+
+</script>
+
+</body>
+</html>

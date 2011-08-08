@@ -1,0 +1,193 @@
+<HTML>
+<HEAD><TITLE>5.2 台湾式ルールを地及びハマで計算する方法</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF" BACKGROUND="../images/bg01.gif">
+<P>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="95%">
+<TR>
+<TH NOWRAP ALIGN="left" VALIGN="top"><FONT SIZE="+2">5.2 台湾式ルールを地及びハマで計算する方法</FONT></TH>
+</TR>
+</TABLE>
+</CENTER>
+</P>
+
+
+<P>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="90%">
+<TR>
+<TD>
+前節で囲碁には2手連続打着を許しても勝敗に影響を生じない断面があることを述べた。<BR>
+台湾ルールで行なわれた局を、地とハマで計算する方法を考えてみることにしよう。<BR>
+最初のパスが行なわれたときまでに盤面に置かれた黒石(置碁の場合は置石を打着した数に加えた数)の数をn<sub>1</SUB>、白石をn<SUB>2</SUB>とする。<BR>
+パス後打着が継続され、終局となったときに盤面上に存在する黒石、白石を夫々A<SUB>1</SUB>、A<SUB>2</SUB>、除去された夫々の石をB<SUB>1</SUB>、B<SUB>2</SUB>、夫々の囲点(地)を夫々C<SUB>1</SUB>、C<SUB>2</SUB>とする。<BR>
+終局のとき黒石の打着された石と置石の数の和N<SUB>1</SUB>、打着された白石の数をN<SUB>2</SUB>とすれば
+
+<TABLE BORDER="0">
+<TR>
+<TD><TABLE BORDER="0" CELLSPACING="4"><TR><TD> </TD></TR></TABLE></TD>
+<TD>
+	<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	<TR>
+	<TD NOWRAP>N<SUB>1</SUB> = A<SUB>1</SUB>+B<SUB>1</SUB> </TD>
+	<TD>	<TABLE BORDER="0" CELLSPACING="4"><TR><TD> </TD></TR></TABLE></TD>
+	<TD NOWRAP>N<SUB>2</SUB> = A<SUB>2</SUB>+B<SUB>2</SUB> </TD>
+	<TD NOWRAP> ………………(1)</TD>
+	</TR>
+	</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">黒白の得点を t<SUB>1</SUB>、t<SUB>2</SUB> とすれば
+</TD>
+</TR>
+
+<TR>
+<TD><BR></TD>
+<TD>t<SUB>1</SUB> = A<SUB>1</SUB>+C<SUB>1</SUB>-1/2(n<SUB>1</SUB>-n<SUB>2</SUB>)<BR>
+t<SUB>2</SUB> = A<SUB>2</SUB>+C<SUB>2</SUB>+1/2(n<SUB>1</SUB>-n<SUB>2</SUB>)
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">黒白の得点差Tは
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">T = t<SUB>1</SUB>-t<SUB>2</SUB><BR>
+ = (A<SUB>1</SUB>-A<SUB>2</SUB>)+(C<SUB>1</SUB>-C<SUB>2</SUB>)-(n<SUB>1</SUB>-n<SUB>2</SUB>)
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" NOWRAP> (1)より</TD>
+</TR>
+
+<TR>
+<TD><BR></TD>
+<TD NOWRAP>
+
+	<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	<TR>
+	<TD NOWRAP VALIGN="top">(A<SUB>1</SUB>-A<SUB>2</SUB>) </TD>
+	<TD NOWRAP>= (N<SUB>1</SUB>-B<SUB>1</SUB>)-(N<SUB>2</SUB>-B<SUB>2</SUB>)<BR>
+= -(B<SUB>1</SUB>-B<SUB>2</SUB>)+(N<SUB>1</SUB>-N<SUB>2</SUB>)</TD>
+	</TR>
+	</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" NOWRAP> ∴  T = (C<SUB>1</SUB>-C<SUB>2</SUB>)-(B<SUB>1</SUB>-B<SUB>2</SUB>)+(N<SUB>1</SUB>-n<SUB>1</SUB>)-(N<SUB>2</SUB>-n<SUB>2</SUB>) ……(2)
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">故に黒、白の地とハマによる得点 s<SUB>1</SUB>、s<SUB>2</SUB>を
+</TD>
+</TR>
+
+<TR>
+<TD><BR></TD>
+<TD NOWRAP>s<SUB>1</SUB> = C<SUB>1</SUB>-B<SUB>1</SUB>+(N<SUB>1</SUB>-n<SUB>1</SUB>)<BR>
+s<SUB>2</SUB> = C<SUB>2</SUB>-B<SUB>2</SUB>+(N<SUB>2</SUB>-n<SUB>2</SUB>) ………………………(3)
+</TD>
+</TR>
+</TABLE>
+
+とすれば、その差は台湾式の計算と一致する筈である。<BR>
+(3)の式の意味を考えれば明らかな如く、C<SUB>1</SUB>は地、B<SUB>1</SUB>はハマであり、(N<SUB>1</SUB>-n<SUB>1</SUB>)の項は最初のパス以後の黒石の打着された数である。故に台湾式で行われた碁においても夫々の得点を、
+
+<P>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD><TABLE BORDER="0" CELLSPACING="4"><TR><TD> </TD></TR></TABLE></TD>
+<TD NOWRAP>得点 = 囲点-ハマ+(最初のパスより後終局までに打着された数)
+</TD>
+</TR>
+</TABLE>
+</P>
+
+とすれば同じ結果となる。<BR>
+しかも一般に台湾流では最初のパス以後の着手を一方が手数の長い相手に合わせることが可能であるから、
+
+<P>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD><TABLE BORDER="0" CELLSPACING="4"><TR><TD> </TD></TR></TABLE></TD>
+<TD NOWRAP>N<SUB>1</SUB>-n<SUB>1</SUB> = N<SUB>2</SUB>-n<SUB>2</SUB>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+とすることを義務づけることが出来る。すなわち手止り以後の着手を同数にすることを義務づけても、それは勝敗に無関係に可能であることである。従ってこの場合は夫々の得点は
+
+<P>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD><TABLE BORDER="0" CELLSPACING="4"><TR><TD> </TD></TR></TABLE></TD>
+<TD NOWRAP>s<SUB>1</SUB> = C<SUB>1</SUB>-B<SUB>1</SUB></TD>
+<TD><TABLE BORDER="0" CELLSPACING="4"><TR><TD> </TD></TR></TABLE></TD>
+<TD NOWRAP>s<SUB>2</SUB> = C<SUB>2</SUB>-B<SUB>2</SUB></TD>
+</TR>
+</TABLE>
+</P>
+
+となる。<BR>
+実戦の場合、手止り以後の両者の手数を数えることは誤り易いので、手止り以後の同数打着は実用的であるといえよう。<BR>
+ただここで考慮しなければならないのは、手止り以後の打着の数を同じにし得ない場合があることである。即ち一方から全く盤上に打着する点が無くなる場合がある。その場合は打着の結果、その石が直ちにハマとなったものと考えればよい筈である。故にその場合はパスを行い、それに対して一石をハマとして相手に渡せばよいことになる。<BR>
+従ってルール上は手止り以後を同数着手とし、手止り以後のパスにはペナルティとして一石をハマとして相手に渡せばよいことになる。<BR>
+普通は打着する場所が全く無くなることはまれにしか生じないから、同数打着でまにあう。<BR>
+台湾式の石の数と地の和を得点とする囲碁が、地とハマによって計算することが可能であることの意味は重大である。即ち石を沢山置くことを目的とする囲碁が、地と相手の石を取ることを目的とすることと全く同じであることを意味している。<BR>
+又日本の慣習法から見れば、いわゆる終局後の着手数を得点とする、ことを追加すれば、種々の特異形が出現しても、打着によって完全に解決することが損をすることなく解決することが可能となることを意味しているのである。<BR>
+ただここに注目すべきことは台湾式の手止りはそれが正しく行われた場合は、そのときのダメの数は偶数コである筈である。(勿論このダメには一方ダメは含まれない)。故に日本式の如くダメが奇数個でも手止りとするのと差を生ずる。<BR>
+故に日本式の地とハマの計算法によるルールに於いて、ダメへの打着を全く無意味なものとするためには、ルール上台湾式に手を加える必要を生ずる。
+</TD></TR>
+</TABLE>
+</CENTER>
+</P>
+
+
+<P>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="5">
+<TR>
+<TD VALIGN="bottom"><A HREF="../j_menu.html"><IMG SRC="../images/j_menu.gif" ALT="目次" WIDTH="72" HEIGHT="30" BORDER="0"></A></TD>
+<TD VALIGN="bottom"><A HREF="../j_rules.html"><IMG SRC="../images/j_rules.gif" ALT="ルール試案" WIDTH="164" HEIGHT="32" BORDER="0"></A></TD>
+<TD><BR></TD>
+<TD VALIGN="bottom"><A HREF="j5010000.html"><IMG SRC="../images/j_prev.gif" ALT="前項" WIDTH="41" HEIGHT="41" BORDER="0"></A></TD>
+<TD VALIGN="bottom"><A HREF="j5030000.html"><IMG SRC="../images/j_next.gif" ALT="次項" WIDTH="41" HEIGHT="41" BORDER="0"></A></TD>
+</TR>
+</TABLE>
+</CENTER>
+</P>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-968446-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTale" style="display: none;"></div>
+<script src="http://s.clicktale.net/WRa.js" type="text/javascript"></script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(12997,1);
+</script>
+<!-- ClickTale end of Bottom part -->
+</BODY>
+</HTML>
