@@ -79,7 +79,7 @@ RESULT_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
         ] );
         
         var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart'));
-        chart.draw( data, { displayRangeSelector : false, displayZoomButtons : false } );
+        chart.draw( data, { colors : [ 'black' ], displayRangeSelector : false, displayZoomButtons : false } );
         var tds = document.getElementsByTagName( 'td' );
         for ( var i = 0 ; i < tds.length ; i++ ) {
           tds[ i ].style.border  = 'none';

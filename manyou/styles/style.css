@@ -41,8 +41,8 @@ a#logo {
 }
 
 a:hover#logo {
-  opacity: 0.80;
-  filter:alpha( opacity = 80 );
+  opacity: 0.90;
+  filter:alpha( opacity = 90 );
 }
 
 div#menu {
@@ -77,18 +77,18 @@ div#menu a.calibrate {
 
 div#menu a.calibrate-selected {
   line-height: 55px;
-  opacity: 0.80;
-  filter:alpha( opacity = 80 );
+  opacity: 0.90;
+  filter:alpha( opacity = 90 );
 }
 
 div#menu a.selected {
-  opacity: 0.80;
-  filter:alpha( opacity = 80 );
+  opacity: 0.90;
+  filter:alpha( opacity = 90 );
 }
 
 div#menu a:hover {
-  opacity: 0.80;
-  filter:alpha( opacity = 80 );
+  opacity: 0.90;
+  filter:alpha( opacity = 90 );
 }
 
 div#submenu {
@@ -114,12 +114,12 @@ div#submenu li a {
   width: 151px;
   opacity: 0.60;
   filter:alpha( opacity = 60 );
-  line-height: 25px;
+  line-height: 27px;
 }
 
 div#submenu a:hover {
-  opacity: 0.80;
-  filter:alpha( opacity = 80 );
+  opacity: 0.90;
+  filter:alpha( opacity = 90 );
 }
 
 div#top_image {
