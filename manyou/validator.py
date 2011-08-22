@@ -6,10 +6,11 @@ validator functions
 
 import re
 
-usernameRE = re.compile(r"^[^ \t\n\r@<>()]+$", re.I )
-domainRE   = re.compile(r"^[a-z0-9][a-z0-9\.\-_]*\.[a-z]+$", re.I )
+USERNAME = re.compile(r"^[^ \t\n\r@<>()]+$", re.I )
+DOMAIN   = re.compile(r"^[a-z0-9][a-z0-9\.\-_]*\.[a-z]+$", re.I )
 
 def validate_mail_address( mail_address ):
+    'validate the mail address'
     if not mail_address:
         return False
     mail_address = mail_address.strip()
@@ -18,8 +19,8 @@ def validate_mail_address( mail_address ):
         username, domain = splitted
     except ValueError:
         return False
-    if not usernameRE.search( username ):
+    if not USERNAME.search( username ):
         return False
-    if not domainRE.search( domain ):
+    if not DOMAIN.search( domain ):
         return False
     return True

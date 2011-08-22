@@ -1,6 +1,10 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8; -*-
 
+"""
+HTML templates
+"""
+
 RECOMMEND_FOOTER = """
  <div class="register">
   <a href="sample.cgi">&gt;&gt; 万葉集を毎日一首ずつメールで読むことができます。まずはサンプルをどうぞ</a>

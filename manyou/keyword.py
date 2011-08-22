@@ -48,8 +48,16 @@ ENGINES = {
     'auone.jp'                : 'q',
     }
     
-RM_OPS  = re.compile( r'(cache:|link:|related:|site:|daterange:|ip:|domain:|info:|stocks:|filetype:|file:|host:|type:)\S*' )
-CUT_OPS = re.compile( r'intitle:|allintitle:|inurl:|allinurl:|inanchor:|allinanchor:|anchor:|allintext:|title:|image:|applet:|url:|define:|\+|---|~' )
+RM_OPS  = re.compile(
+    r'(' +
+    '|'.join( [ 'cache:', 'link:', 'related:', 'site:', 'daterange:', 'ip:',
+                'domain:', 'info:', 'stocks:', 'filetype:', 'file:', 'host:',
+                'type:' ] ) +
+    ')\S*' )
+CUT_OPS = re.compile( r'|'.join(
+        [ 'intitle:', 'allintitle:', 'inurl:', 'allinurl:', 'inanchor:',
+          'allinanchor:', 'anchor:', 'allintext:', 'title:', 'image:',
+          'applet:', 'url:', 'define:', '\+', '---', '~' ] ) )
 U_OPS   = re.compile( r'AND|OR' )
 DSPACE  = re.compile( ' +' )
 DQUEST  = re.compile( '\?+' )
