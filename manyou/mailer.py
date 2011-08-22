@@ -92,7 +92,8 @@ def error_handler():
     stack         = u'\n\n'.join(
         [ pformat( inspect.getargvalues( frame[ 0 ] )[ 3 ] )
           for frame in inspect.stack() ] )
-    log( ERROR_MESSAGE % dict( error_message = error_message, stack = stack ) )
+    log( ERROR_MESSAGE % dict( error_message = error_message,
+                               stack = stack ) )
 
 def send_mail( message, to_address, server = None, retry = True ):
     'send mail'

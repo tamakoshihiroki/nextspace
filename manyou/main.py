@@ -37,8 +37,8 @@ def process_user( user, utas, database, smtpserver ):
         body         = create_body( user[ 'direction' ], uta,
                                     user[ 'column' ], user[ 'row' ] )
         mail         = create_message( body, subject, mail_address )
-        send_mail( mail, mail_address, smtpserver )
-        increment_send_index( database, mail_address )
+        if send_mail( mail, mail_address, smtpserver ):
+            increment_send_index( database, mail_address )
     except:
         error_handler()
 
