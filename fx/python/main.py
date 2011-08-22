@@ -4,7 +4,6 @@ SERVICES = [ 'central_tanshifx',
              'MJ',
              'cyberagent_fx',
              'gaitame_dotcom',
-             'ntt_smart_trade',
              'himawari_fx',
              ]
 

@@ -240,11 +240,17 @@ FROM
     manyoushu_personal_information AS t1
    GROUP BY
     date ) AS t1,
- manyoushu_personal_information AS t2
+ ( SELECT
+    t1.id AS id,
+    CAST( t1.register_date AS DATE ) AS register_date,
+    CAST( t1.cancel_date AS DATE ) AS cancel_date
+   FROM
+    manyoushu_personal_information AS t1
+ ) AS t2
 WHERE
- t2.register_date <= t1.date + INTERVAL 1 DAY AND
- ( t2.cancel_date = '0000/00/00 00:00:00' OR
-   t1.date + INTERVAL 1 DAY <= t2.cancel_date )
+ t2.register_date <= t1.date AND
+ ( t2.cancel_date = '0000/00/00' OR
+   t1.date <= t2.cancel_date )
 GROUP BY
  date
 """
