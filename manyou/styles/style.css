@@ -231,6 +231,11 @@ div.normal-message {
   margin: 10px 0px 20px 0px;
 }
 
+.message {
+  color: #df600d;
+  margin: 10px 0px 10px 0px;
+}
+
 ul li {
   list-style-position: inside;
 }

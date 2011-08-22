@@ -242,9 +242,9 @@ FROM
     date ) AS t1,
  manyoushu_personal_information AS t2
 WHERE
- t2.register_date <= t1.date AND
- ( t2.cancel_date = '0000/00/00' OR
-   t1.date <= t2.cancel_date )
+ CAST( t2.register_date AS DATE ) <= t1.date AND
+ ( CAST( t2.cancel_date AS DATE ) = '0000/00/00' OR
+   t1.date <= CAST( t2.cancel_date AS DATE ) )
 GROUP BY
  date
 """

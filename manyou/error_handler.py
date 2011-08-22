@@ -33,7 +33,7 @@ def create_body():
         user_agent    = os.getenv( 'HTTP_USER_AGENT', '' ),
         error_message = traceback.format_exc(),
         stack         = u'\n\n'.join(
-            [ pformat( inspect.getargvalues( frame[ 0 ] ) )
+            [ pformat( inspect.getargvalues( frame[ 0 ] )[ 3 ] )
               for frame in inspect.stack() ] ),
         )
 
@@ -49,6 +49,7 @@ def error_handler():
 
 # def error_handler():
 #     'error handler'
-#     thread = Thread( target = main_handler )
+#     thread = Thread( target = main_handler,
+#                      args = ( traceback.format_exc(), inspect.stack() ) )
 #     thread.daemon = True
 #     thread.start()

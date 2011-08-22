@@ -32,7 +32,7 @@ def utf8( unicode_string ):
 
 def clean_title( title ):
     'remove unusable character from title'
-    return unescape( title, { '\n' : '', ':' : '', } )
+    return unescape( title, { '\n' : '', ':' : '', '!' : '' } )
 
 def get_new_books( url = URL ):
     """
@@ -221,6 +221,11 @@ URLS = [
     # 'http://219.94.152.133/mangakan/hotd.html',
     # 'http://219.94.152.133/mangakan/sonota_01.html',
     ]
+
+def hand_upload( titles ):
+    "hand upload"
+    for title in titles:
+        upload_to_dropbox( title )
 
 if '__main__' == __name__:
     # for url in URLS:

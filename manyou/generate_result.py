@@ -8,7 +8,7 @@ generate result.html
 from templates     import RESULT_TEMPLATE, FOOTER_TEMPLATE
 from controller    import transition_of_num_of_registered
 from error_handler import error_handler
-from datetime      import datetime
+from datetime      import datetime, timedelta
 
 ROW = '[ new Date(%(year)d, %(month)d, %(day)d), %(number)d ]'
 
@@ -20,7 +20,7 @@ def render_html():
                                            day    = item[ 'date' ].day,
                                            number = item[ 'number' ], )
                                for item in transition ] )
-    now        = datetime.now()
+    now        = datetime.now() - timedelta( days = 1 )
     html       = RESULT_TEMPLATE % dict(
         year   = now.year,
         month  = now.month,
