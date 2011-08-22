@@ -18,6 +18,10 @@ from email.Header   import Header
 from email.Utils    import formatdate
 from time           import sleep
 from tategaki       import tategaki
+from logger         import log
+from pprint         import pformat
+import traceback
+import inspect
 import smtplib
 
 def body_encoding( to_address ):
@@ -74,6 +78,22 @@ def get_smtpserver():
         i = i + 1
     return server
 
+ERROR_MESSAGE = u"""
+エラー内容：
+%(error_message)s
+
+スタック：
+%(stack)s
+"""
+
+def error_handler():
+    'error handler'
+    error_message = traceback.format_exc()
+    stack         = u'\n\n'.join(
+        [ pformat( inspect.getargvalues( frame[ 0 ] )[ 3 ] )
+          for frame in inspect.stack() ] )
+    log( ERROR_MESSAGE % dict( error_message = error_message, stack = stack ) )
+
 def send_mail( message, to_address, server = None, retry = True ):
     'send mail'
     server_close = False
@@ -84,7 +104,11 @@ def send_mail( message, to_address, server = None, retry = True ):
         server.sendmail( FROM, [ to_address ], message.as_string() )
         if server_close:
             server.close()
+        return True
     except:
+        error_handler()
         server = get_smtpserver()
         if retry:
-            send_mail( message, to_address, server, False )
+            return send_mail( message, to_address, server, False )
+        else:
+            return False

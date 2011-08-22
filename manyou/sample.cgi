@@ -66,7 +66,7 @@ def process_mail( values ):
     'get uta, and send mail'
     uta  = get_uta( values )
     mail = create_mail( uta, values )
-    send_mail( mail, values[ 'mail_address' ] )
+    return send_mail( mail, values[ 'mail_address' ] )
 
 MSG_RIGHT      = '<div class="message">%(mail_address)sに送信しました</div>'
 MSG_VALIDATION = '<div class="message">メールアドレスを正しく入力してください</div>'
@@ -114,7 +114,8 @@ def process( values, validated ):
             if validated:
                 message = MSG_RIGHT % dict(
                     mail_address = values[ 'mail_address' ] )
-                process_mail( values )
+                if not process_mail( values ):
+                    raise Exception
             else:
                 message = MSG_VALIDATION
     except:
