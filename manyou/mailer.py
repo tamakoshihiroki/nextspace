@@ -16,7 +16,6 @@ FROM             = 'tmkc.igo@gmail.com'
 from email.MIMEText import MIMEText
 from email.Header   import Header
 from email.Utils    import formatdate
-from smtplib        import SMTPServerDisconnected
 from time           import sleep
 from tategaki       import tategaki
 from error_handler  import error_handler
@@ -82,13 +81,12 @@ def send_mail( message, to_address, server = None, retry = True ):
     if not server:
         server       = get_smtpserver()
         server_close = True
-    if server:
-        try:
-            server.sendmail( FROM, [ to_address ], message.as_string() )
-            if server_close:
-                server.close()
-        except:
-            error_handler()
-            server = get_smtpserver()
-            if retry:
-                send_mail( message, to_address, server, False )
+    try:
+        server.sendmail( FROM, [ to_address ], message.as_string() )
+        if server_close:
+            server.close()
+    except:
+        error_handler()
+        server = get_smtpserver()
+        if retry:
+            send_mail( message, to_address, server, False )
