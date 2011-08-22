@@ -44,7 +44,7 @@ def database_open():
     """
     database = None
     i        = 0
-    while ( None == database and i < 3 ):
+    while ( None == database and i < 10 ):
         try:
             database = MySQLdb.connect( host = HOST, db = DATABASE,
                                         user = DBUSER, passwd = DBPASSWD,

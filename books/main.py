@@ -13,6 +13,7 @@ from xml.sax.saxutils import unescape
 import os
 import traceback
 import mechanize
+import subprocess
 
 URL    = 'http://www.mangakan.net/new.html'
 ERRORS = []
@@ -25,6 +26,34 @@ WGET   = u' '.join(
                   u'compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)"' ] ),
       u'--referer=%(referrer)s',
       u'%(directory)s/image/%(image_file)s' ] )
+
+def diskusage():
+    'disk usage'
+    try:
+        process = subprocess.Popen( [ 'quota' ], stdout = subprocess.PIPE )
+        process.wait()
+        result  = process.stdout.read()
+        values  = [ item for item in result.split( '\n' )[ 2 ].split( ' ' )
+                    if item ]
+        return int( values[ 1 ] )
+    except:
+        stacktrace = traceback.format_exc()
+        ERRORS.append( stacktrace )
+        return None
+
+def delete_old_books( free = 102400, quota = 512000 ):
+    'delete old books'
+    try:
+        while quota - diskusage() < free:
+            files = os.listdir( 'books' )
+            files = sorted( zip( map( lambda f: os.stat( 'books/' + f )[ 8 ],
+                                      files ),
+                                 files ) )
+            _, to_delete = files[ 0 ]
+            os.unlink( 'books/' + to_delete )
+    except:
+        stacktrace = traceback.format_exc()
+        ERRORS.append( stacktrace )
 
 def utf8( unicode_string ):
     'return utf-8 string of unicode string'
@@ -143,6 +172,7 @@ def do_it( url = URL ):
     """
     get books specified by url
     """
+    delete_old_books()
     books = get_new_books( url )
     os.chdir( 'books' )
     for title, url in books.iteritems():
