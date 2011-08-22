@@ -87,11 +87,8 @@ def send_mail( message, to_address, server = None, retry = True ):
             server.sendmail( FROM, [ to_address ], message.as_string() )
             if server_close:
                 server.close()
-        except SMTPServerDisconnected:
-            server = get_smtpserver()
         except:
-            server = None
-        finally:
             error_handler()
+            server = get_smtpserver()
             if retry:
                 send_mail( message, to_address, server, False )
