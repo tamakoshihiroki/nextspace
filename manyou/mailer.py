@@ -18,7 +18,6 @@ from email.Header   import Header
 from email.Utils    import formatdate
 from time           import sleep
 from tategaki       import tategaki
-from error_handler  import error_handler
 import smtplib
 
 def body_encoding( to_address ):
@@ -86,7 +85,6 @@ def send_mail( message, to_address, server = None, retry = True ):
         if server_close:
             server.close()
     except:
-        error_handler()
         server = get_smtpserver()
         if retry:
             send_mail( message, to_address, server, False )
