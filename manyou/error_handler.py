@@ -4,10 +4,13 @@
 error handler
 """
 
-from mailer import create_message, send_mail
-from logger import log
+from mailer    import create_message, send_mail
+from logger    import log
+from pprint    import pformat
+# from threading import Thread
 import traceback
 import os
+import inspect
 
 SUBJECT = u'本日の万葉集 エラー'
 BODY    = u"""エラーが発生しました。
@@ -18,6 +21,9 @@ BODY    = u"""エラーが発生しました。
 
 エラー内容：
 %(error_message)s
+
+スタック：
+%(stack)s
 """
 
 def create_body():
@@ -26,10 +32,13 @@ def create_body():
         ip            = os.getenv( 'REMOTE_ADDR', '' ),
         user_agent    = os.getenv( 'HTTP_USER_AGENT', '' ),
         error_message = traceback.format_exc(),
+        stack         = u'\n\n'.join(
+            [ pformat( inspect.getargvalues( frame[ 0 ] ) )
+              for frame in inspect.stack() ] ),
         )
 
 def error_handler():
-    'error handler'
+    'main error handler function'
     try:
         body = create_body()
         mail = create_message( body, SUBJECT, 'tmkc.igo@gmail.com' )
@@ -37,3 +46,9 @@ def error_handler():
     except:
         error_message = traceback.format_exc()
         log( error_message )
+
+# def error_handler():
+#     'error handler'
+#     thread = Thread( target = main_handler )
+#     thread.daemon = True
+#     thread.start()

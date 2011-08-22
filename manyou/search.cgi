@@ -115,7 +115,10 @@ def process( values ):
             html = render_html( values, {}, message )
             error_handler()
         finally:
-            display_html( html )
+            try:
+                display_html( html )
+            except IOError:
+                pass
 
 def do_it():
     'do it'

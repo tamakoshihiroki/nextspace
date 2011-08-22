@@ -19,6 +19,7 @@ ERRORS = []
 WGET   = u' '.join(
     [ u'cd "%(title)s";',
       u'/usr/local/bin/wget',
+      u'--quiet',
       u'--no-clobber',
       u''.join( [ u'--user-agent="Mozilla/4.0 ('
                   u'compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)"' ] ),

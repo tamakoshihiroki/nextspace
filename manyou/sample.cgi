@@ -122,7 +122,10 @@ def process( values, validated ):
         error_handler()
     finally:
         html = create_html( values, message )
-        display_page( html )
+        try:
+            display_page( html )
+        except IOError:
+            pass
 
 def do_it():
     'do it'
