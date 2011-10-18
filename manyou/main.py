@@ -46,7 +46,7 @@ def do_it():
     'do it'
     try:
         database   = database_open()
-        day, hour  = get_day, int( sys.argv[ 1 ] )
+        day, hour  = get_day(), int( sys.argv[ 1 ] )
         users      = get_user_by_date( database, day, hour )
         if not users:
             database_close( database )

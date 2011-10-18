@@ -72,6 +72,7 @@ RESULT_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <script type="text/javascript" src="javascript/common.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
+<!--
       google.load("visualization", "1", {packages:["annotatedtimeline"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
@@ -90,6 +91,7 @@ RESULT_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
           tds[ i ].style.padding = '0px';
         }
       }
+// -->
     </script>
     <title>本日の万葉集 / 利用実績</title>
 </head>
